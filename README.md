@@ -1,17 +1,27 @@
-Sur la base du fichier json ci-joint, représentant des mesures système d'un serveur Linux (fichiers, cpu, mémoire), nous vous demandons d’instancier un serveur NodeJS incluant des API permettant de  :
+# Mise en place
 
-§  Calculer la valeur minimale (avec date), valeur maximale (avec date) et moyenne pour n’importe quelle valeur numérique
+Dans le terminal, entrer `npm i` pour installer les dépendances.
 
-    Utiliser les routes /minValue/:name, /maxValue/:name et /avgValue/:name.
+Entrer `node index.js` pour lancer le serveur.
 
-§  Renvoyer l'ensemble des mesures comprises en deux dates (time)
+Lancer un navigateur et entrer l'adresse `http://localhost:3000`
 
-    Utiliser la route /dataBetweenDates/:date1/:date2.
+## Valeur Minimale, valeur maximale et moyenne
 
-§  Renvoyer l’ensemble des valeurs d’une mesure (ex : « used » ou « recv) comprises en deux dates (time)
+Entrer dans la barre de recherche `/minValue/:name` (remplacer `:name` par la mesure voulue, ex: files) pour récupérer la valeur minimale d'une valeur.
 
-    Utiliser la route /metricValueBetweenTwoDates/:name/:date1/:date2.
+Entrer dans la barre de recherche `/maxValue/:name` (remplacer `:name` par la mesure voulue, ex: files) pour récupérer la valeur maximale d'une valeur.
 
-§  Ajouter une mesure (sous forme d'objet JSON)
+Entrer dans la barre de recherche `/avgValue/:name` (remplacer `:name` par la mesure voulue, ex: files) pour récupérer la moyenne d'une valeur.
 
-    Utiliser la route /addValue.
+## Ensemble de mesures entre deux dates
+
+Entrer dans la barre de recherche `/dataBetweenDates/:date1/:date2` (remplacer `:date1`  et `date2` par la mesure voulue, par ex : `http://localhost:3000/dataBetweenDates/2022-16-03 10:08:28/2022-16-03 10:13:28`) pour récupérer les mesures entre ces deux dates.
+
+## Ensemble des valeurs d'une mesure entre deux dates
+
+Entrer dans la barre de recherche `/metricValueBetweenTwoDates/:name/:date1/:date2` (remplacer `:date1`  et `date2` par la date voulue, et `name` par la mesure voulue, par ex : `http://localhost:3000/metricValueBetweenTwoDates/files/2022-16-03 10:08:28/2022-16-03 10:13:28`) pour récupérer les valeurs d'une mesure entre ces deux dates.
+
+## Ajouter une mesure
+
+Entrer dans la barre de recherche `http://localhost:3000/addValue`, utiliser le formulaire pour entrer les valeurs des mesures puis appuyer sur Send. La mesure sera ajoutée au fichier metrics.json situé dans le dossier `data`. 

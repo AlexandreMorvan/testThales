@@ -100,17 +100,19 @@ app.post('/addValue', (req, res, next) => {
     dataServ.push(form)
 
     const dataServToString = JSON.stringify(dataServ)
-    
+
     fs.writeFile('/var/www/html/thales/testNode1/data/metrics.json', dataServToString, (err) => {
+
         if (err)
             console.log(err);
         else {
             console.log("File written successfully\n");
             console.log("The written has the following contents:");
-
         }
     });
+
     res.status(201).json({ message: "Value added" })
+    
 })
 
 app.listen(PORT, () => {
