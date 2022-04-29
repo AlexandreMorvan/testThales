@@ -23,9 +23,6 @@ const functionModule = {
         );
 
         return newArray
-        //newArray.forEach(element => {
-        //    return console.log('nb of files ' + element.files + ' le ' + element.time)
-        //})
     },
 
     arrayMax: (data, metric) => {
@@ -38,10 +35,6 @@ const functionModule = {
         );
 
         return newArray
-        //newArray.forEach(element => {
-        //  return console.log('nb of files ' + element.files + ' le ' + element.time)
-        //})
-
     },
 
     dataBetweenTwoDates: (data, date1, date2) => {
